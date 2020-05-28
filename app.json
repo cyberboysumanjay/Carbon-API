@@ -1,0 +1,22 @@
+{
+    "name": "Carbon-API",
+    "description": "Unofficial API for Carbon written in Flask using Pyppeteer.",
+    "keywords": ["carbon", "carbonnowsh", "python", "flask", "pyppeteer", "api"],
+    "success_url": "https://t.me/sjprojects",
+    "website": "https://github.com/cyberboysumanjay/Carbon-API",
+    "repository": "https://github.com/cyberboysumanjay/Carbon-API",
+    "addons": [],
+    "buildpacks": [{
+            "url": "https://github.com/jontewks/puppeteer-heroku-buildpack.git"
+        },
+        {
+            "url": "heroku/python"
+        }
+    ],
+    "formation": {
+        "worker": {
+            "quantity": 1,
+            "size": "free"
+        }
+    }
+}
