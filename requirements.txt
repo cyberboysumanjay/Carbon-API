@@ -1,0 +1,9 @@
+ 
+Flask
+gunicorn
+httplib2
+requests
+logger
+flask-cors
+pyppeteer
+asyncio
