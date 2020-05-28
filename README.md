@@ -8,6 +8,7 @@
     <b>Unofficial API</b>
     <br>
 </p>
+
 ### Show some :heart: and :star: the repo
 
 [![GitHub stars](https://img.shields.io/github/stars/cyberboysumanjay/Carbon-API.svg?style=social&label=Star)](https://github.com/cyberboysumanjay/JioSaavnAPI)
@@ -72,7 +73,6 @@ https://carbonnowsh.herokuapp.com/?code=Made+with+Love+in+India+by+Sumanjay&them
 #### Deploy Option
 
 * **[Heroku](https://www.heroku.com/) Method** 
-Click here 
   [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/cyberboysumanjay/Carbon-API/tree/master)
 
 * **Other Method** 
@@ -87,7 +87,7 @@ Click here
   ../venv/bin/activate
 
   # Install requirements
-  pip install -r requirements.txt
+  pip3 install -r requirements.txt
 
   # Finally run the app
   python3 app.py
