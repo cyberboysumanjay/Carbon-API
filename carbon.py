@@ -7,7 +7,7 @@ from pyppeteer import launch
 DOWNLOAD_FOLDER = os.getcwd()
 
 async def open_carbonnowsh(url):
-    browser = await launch(defaultViewPort=None, handleSIGINT=False, handleSIGTERM=False, handleSIGHUP=False)
+    browser = await launch(defaultViewPort=None, handleSIGINT=False, handleSIGTERM=False, handleSIGHUP=False, headless=True)
     page = await browser.newPage()
     await page._client.send('Page.setDownloadBehavior', {'behavior': 'allow', 'downloadPath': DOWNLOAD_FOLDER})
     await page.goto(url, timeout=100000)
