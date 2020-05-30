@@ -2,6 +2,5 @@ asyncio
 Flask
 flask-cors
 gunicorn
-httplib2
 logger
 pyppeteer
