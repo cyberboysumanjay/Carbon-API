@@ -59,6 +59,7 @@ ignoredOptions = [
     "selectedLines",
 ]
 
+
 def validateBody(body_):
     validatedBody = {}
     if not body_['code']:
@@ -72,7 +73,7 @@ def validateBody(body_):
             continue
             print(f"Unexpected option: {option} found. Ignoring!")
             #raise Exception(f"Unexpected option: {option}")
-        
+
         validatedBody[option] = body_[option]
     return validatedBody
 
