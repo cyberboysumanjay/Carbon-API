@@ -1,9 +1,6 @@
- 
-Flask
-gunicorn
-httplib2
-requests
-logger
-flask-cors
-pyppeteer
 asyncio
+Flask
+flask-cors
+gunicorn
+logger
+pyppeteer
