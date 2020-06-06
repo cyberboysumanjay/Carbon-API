@@ -73,7 +73,6 @@ def validateBody(body_):
             continue
             print(f"Unexpected option: {option} found. Ignoring!")
             #raise Exception(f"Unexpected option: {option}")
-
         validatedBody[option] = body_[option]
     return validatedBody
 
@@ -82,10 +81,23 @@ def createURLString(validatedBody):
     base_url = "https://carbon.now.sh/"
     first = True
     url = ""
+    try:
+        if validatedBody['backgroundColor'].startswith('#') or len(validatedBody['backgroundColor']) == 6:
+            validatedBody['backgroundColor'] = hex2rgb(
+                validatedBody['backgroundColor'])
+    except KeyError:
+        pass
     for option in validatedBody:
         if first:
             first = False
-            url = base_url + f"?{optionToQueryParam[option]}={validatedBody[option]}"
+            url = base_url + \
+                f"?{optionToQueryParam[option]}={validatedBody[option]}"
         else:
-            url = url + f"&{optionToQueryParam[option]}={validatedBody[option]}"
+            url = url + \
+                f"&{optionToQueryParam[option]}={validatedBody[option]}"
     return url
+
+
+def hex2rgb(h):
+    h = h.lstrip('#')
+    return ('rgb'+str(tuple(int(h[i:i+2], 16) for i in (0, 2, 4))))
