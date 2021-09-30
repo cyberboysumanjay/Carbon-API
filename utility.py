@@ -82,7 +82,7 @@ def createURLString(validatedBody):
     first = True
     url = ""
     try:
-        if validatedBody['backgroundColor'].startswith('#') or len(validatedBody['backgroundColor']) == 6:
+        if validatedBody['backgroundColor'].startswith('#') or checkHex(validatedBody['backgroundColor'].upper()) == True:
             validatedBody['backgroundColor'] = hex2rgb(
                 validatedBody['backgroundColor'])
     except KeyError:
@@ -101,3 +101,9 @@ def createURLString(validatedBody):
 def hex2rgb(h):
     h = h.lstrip('#')
     return ('rgb'+str(tuple(int(h[i:i+2], 16) for i in (0, 2, 4))))
+
+def checkHex(s):
+    for ch in s:
+        if ((ch < '0' or ch > '9') and (ch < 'A' or ch > 'F')):  
+            return False
+    return True
